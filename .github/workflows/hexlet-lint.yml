@@ -1,0 +1,12 @@
+name: code linting
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: make code linting by Eslint
+      - run: make lint
