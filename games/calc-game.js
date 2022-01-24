@@ -1,4 +1,4 @@
-import { initGame, randomNumber } from '../src/index.js';
+import { initGame, randomNum } from '../src/index.js';
 
 const randomOperation = () => {
   const operations = ['+', '-', '*'];
@@ -11,8 +11,8 @@ const gameRules = () => {
 };
 
 const getQuestionAndAnswer = () => {
-  const firstOperand = randomNumber();
-  const secondOperand = randomNumber();
+  const firstOperand = randomNum();
+  const secondOperand = randomNum();
   const operation = randomOperation();
 
   const question = `${firstOperand} ${operation} ${secondOperand}`;

@@ -1,12 +1,12 @@
-import { initGame, randomNumber } from '../src/index.js';
+import { initGame, randomNum } from '../src/index.js';
 
 const gameRules = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
 
 const getQuestionAndAnswer = () => {
-  let firstNumber = randomNumber();
-  let secondNumber = randomNumber();
+  let firstNumber = randomNum();
+  let secondNumber = randomNum();
   const question = `${firstNumber} ${secondNumber}`;
 
   while (firstNumber !== secondNumber) {

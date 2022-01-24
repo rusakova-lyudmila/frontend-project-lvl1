@@ -1,11 +1,11 @@
-import { initGame, randomNumber } from '../src/index.js';
+import { initGame, randomNum } from '../src/index.js';
 
 const gameRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 const getQuestionAndAnswer = () => {
-  const question = randomNumber();
+  const question = randomNum();
   const rightAnswer = question % 2 === 0 ? 'yes' : 'no';
 
   return [question, rightAnswer];
