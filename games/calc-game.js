@@ -6,9 +6,7 @@ const randomOperation = () => {
   return operations[Math.floor(Math.random() * operations.length)];
 };
 
-const gameRules = () => {
-  console.log('What is the result of the expression?');
-};
+const gameRules = 'What is the result of the expression?';
 
 const getQuestionAndAnswer = () => {
   const firstOperand = randomNum();
@@ -16,7 +14,7 @@ const getQuestionAndAnswer = () => {
   const operation = randomOperation();
 
   const question = `${firstOperand} ${operation} ${secondOperand}`;
-  let rightAnswer = 0;
+  let rightAnswer;
 
   switch (operation) {
     case '+':
@@ -32,7 +30,8 @@ const getQuestionAndAnswer = () => {
       break;
   }
 
-  return [question, String(rightAnswer)];
+  const rightAnswerString = String(rightAnswer);
+  return [question, rightAnswerString];
 };
 
 const calcGame = () => {

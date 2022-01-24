@@ -1,29 +1,25 @@
 import { initGame, randomNum } from '../src/index.js';
 
-const gameRules = () => {
-  console.log('What number is missing in the progression?');
-};
+const gameRules = 'What number is missing in the progression?';
 
 const getQuestionAndAnswer = () => {
   const progressionLength = randomNum(5, 10);
   const progressionDifference = randomNum(1, 9);
   const hiddenElementPosition = randomNum(1, progressionLength) - 1;
-  let startElement = randomNum(1, 20);
-  const progressionElements = [startElement];
+  const startElement = randomNum(1, 20);
+  const progressionElements = [];
 
   for (let i = 0; i < progressionLength; i += 1) {
-    const newElement = startElement + progressionDifference;
+    const newElement = startElement + i * progressionDifference;
     progressionElements.push(newElement);
-
-    startElement = newElement;
   }
 
-  const rightAnswer = progressionElements[hiddenElementPosition];
+  const rightAnswer = String(progressionElements[hiddenElementPosition]);
 
-  progressionElements.splice(hiddenElementPosition, 1, '..');
+  progressionElements[hiddenElementPosition] = '..';
   const question = progressionElements.join(' ');
 
-  return [question, String(rightAnswer)];
+  return [question, rightAnswer];
 };
 
 const progressionGame = () => {

@@ -13,48 +13,40 @@ const answerQuestion = (question) => {
 
 const checkAnswer = (answer, rightAnswer) => {
   const isCorrect = answer === rightAnswer;
+  const checkAnswerMess = isCorrect ? 'Correct!' : `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`;
 
-  if (isCorrect) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-  }
+  console.log(checkAnswerMess);
 
   return isCorrect;
 };
 
 const countAnswer = (answerCount, isCorrect) => {
-  if (isCorrect) {
-    return answerCount + 1;
-  }
+  const answerAmount = isCorrect ? answerCount + 1 : answerCount;
 
-  return answerCount;
+  return answerAmount;
 };
 
 const finishGame = (isCorrect, name) => {
-  if (!isCorrect) {
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const finishGameMess = isCorrect ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
+
+  console.log(finishGameMess);
 };
 
 export const initGame = (gameRules, getQuestionAndAnswer) => {
-  const name = greeting();
+  const playerName = greeting();
 
-  gameRules();
+  console.log(gameRules);
 
   let isCorrect = true;
   let answerCount = 0;
-  let [question, rightAnswer] = getQuestionAndAnswer();
 
   while (answerCount < roundCount && isCorrect) {
+    const [question, rightAnswer] = getQuestionAndAnswer();
     const answer = answerQuestion(question);
 
     isCorrect = checkAnswer(answer, rightAnswer);
     answerCount = countAnswer(answerCount, isCorrect);
-    [question, rightAnswer] = getQuestionAndAnswer();
   }
 
-  finishGame(isCorrect, name);
+  finishGame(isCorrect, playerName);
 };
