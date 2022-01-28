@@ -3,7 +3,7 @@ import greeting from './cli.js';
 
 const roundCount = 3;
 
-export const randomNum = (min = 1, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const randomNum = (min = 2, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const answerQuestion = (question) => {
   console.log(`Question: ${question}`);

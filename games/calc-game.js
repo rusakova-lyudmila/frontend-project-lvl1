@@ -30,8 +30,7 @@ const getQuestionAndAnswer = () => {
       break;
   }
 
-  const rightAnswerString = String(rightAnswer);
-  return [question, rightAnswerString];
+  return [question, String(rightAnswer)];
 };
 
 const calcGame = () => {
